@@ -28,7 +28,7 @@ void TutorialApp::prepareSettings( Settings *settings )
 void TutorialApp::setup()
 {
 	mCam.setPerspective( 60, getWindowAspectRatio(), 1, 1000 );
-    mParticleController.addParticles(10);
+    mParticleController.addParticles(5);
 }
 
 void TutorialApp::update()
@@ -38,7 +38,7 @@ void TutorialApp::update()
 
 void TutorialApp::draw()
 {
-   // mCam.lookAt( Vec3f( cos( getElapsedSeconds() ), 1.0, sin( getElapsedSeconds() ) ) *50, Vec3f::zero() );
+    mCam.lookAt( Vec3f( cos( getElapsedSeconds() ), 0.0, sin( getElapsedSeconds() ) ) *50, Vec3f::zero() );
 	
 	// Set matrix from camera:
 	gl::setMatrices( mCam );

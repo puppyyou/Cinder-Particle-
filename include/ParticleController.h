@@ -3,7 +3,7 @@
 #include <list>
 
 class ParticleController {
- public:
+public:
 	ParticleController();
 	void update();
 	void draw();

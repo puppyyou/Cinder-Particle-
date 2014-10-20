@@ -9,13 +9,14 @@ Particle::Particle()
 {
 }
 
-Particle::Particle( Vec3f ,float r, int typeofshape)
+Particle::Particle( Vec3f location ,float r, int typeofshape, ci::Vec3i mcolor01)
 {
-	mDir	= Vec3f(1,1,1);//Rand::randVec3f();
-	mVel	= float( 5.0f );//Rand::randFloat( 5.0f );
+	mDir	= Vec3f(1,1,1);   //Rand::randVec3f();
+	mVel	= float( 5.0f );  //Rand::randFloat( 5.0f );
 	mRadius	= r;
     mtypeofshape= typeofshape;
-    //mLoc   = Vec3f(1,1,1);
+    mLoc   = location;
+    mcolor = mcolor01;
 }
 
 void Particle::update()
@@ -25,5 +26,7 @@ void Particle::update()
 
 void Particle::draw()
 {
+    glColor3b(mcolor.x, mcolor.y, mcolor.z);
 	gl::drawSphere(mLoc, mRadius, 36);
+    
 }
